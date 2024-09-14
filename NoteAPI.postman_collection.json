@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "d9281bcb-053d-49a7-bf0a-bc45c176e5eb",
+		"name": "NoteAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38350923"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/public/login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"user1\",\n  \"password\": \"password1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/public/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"public",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/protected/addnote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYzNTcwOTYsInVzZXJJRCI6MX0.6jDGcrQ99nXr4_WMctTaV9Dk-B3XCHQPGxPTFlGZJZI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Meeting Notes\",\n    \"content\": \"Discussed project tmlines and deliverables.\",\n    \"date\": \"2024-09-15T12:34:56Z\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/protected/addnote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"protected",
+						"addnote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/protected/getnotes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYzNTcwOTYsInVzZXJJRCI6MX0.6jDGcrQ99nXr4_WMctTaV9Dk-B3XCHQPGxPTFlGZJZI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/protected/getnotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"protected",
+						"getnotes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
