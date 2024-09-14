@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_PASSWORD=leonard
+      - DB_NAME=noteapi
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: noteapi
+      POSTGRES_USER: exxzic
+      POSTGRES_PASSWORD: leonard
+    ports:
+      - "5433:5432"
